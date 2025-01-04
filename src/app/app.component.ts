@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true, // Define como standalone
+  imports: [RouterModule], // Importa el módulo de enrutamiento
+  template: `
+    <header></header>
+    <router-outlet></router-outlet>
+    <footer></footer>
+  `,
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = '4V_GYM_PROYECTO';
+  title = 'Mi Proyecto Angular'; // Agregar esta línea
 }
